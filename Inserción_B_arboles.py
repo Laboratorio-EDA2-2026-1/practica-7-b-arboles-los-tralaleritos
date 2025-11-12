@@ -1,4 +1,4 @@
-#Implementa aquí todos los procesos necesarios para la operación de inserción. 
+#Implementa aquí todos los procesos necesarios para la operación de insercion. 
 #Pueden modificar la extensión del documento para que se ajuste al lenguaje de su elección y comentar estas instrucciones.
 
 #Implementacion del arbol binario:
@@ -17,17 +17,21 @@ class Nodo:
 class ArbolBinario:
     #Impresion del Arbol Binario
     def recorrido_inorden(self):
-        valores = []
+        print("\nRecorrido Inorden, de manera ascendente:")
         def inorden_recursivo(nodo):
-            if nodo:
+            if nodo is not None: #Si el nodo existe y no es nulo, osea no sucede que no tiene referencia: 
+                #Llamamos de manera recursiva para explorar por el subarbol izq
                 inorden_recursivo(nodo.izquierda)
                 
-                valores.append(nodo.valor)
+                #Imprimiendo el valor:
+                print(nodo.valor, end=", ")
                 
+                #Llamamos de manera recursiva para explorar por el subarbol derecho
                 inorden_recursivo(nodo.derecha)
         
+        #Llamamos de manera recursiva desde la raiz del arbol, para que la siguiente vez que se llegue, si caiga en el if
         inorden_recursivo(self.raiz)
-        print("Recorrido Inorden, de manera ascendente:", valores)
+        
     
     def __init__(self):
         self.raiz = None
