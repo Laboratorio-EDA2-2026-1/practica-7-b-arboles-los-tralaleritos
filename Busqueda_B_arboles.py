@@ -1,5 +1,3 @@
-# Implementación de búsqueda en Árbol-B
-
 #Nodo de Arbol-B clase:
 class NodoArbolB:
     #Constructor
